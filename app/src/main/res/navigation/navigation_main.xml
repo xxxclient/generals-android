@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_navigation">
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/welcomeFragment">
 
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.potapov.generals.presentation.view.WelcomeFragment"
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.potapov.generals.presentation.view.StartFragment"
+        android:label="StartFragment" >
+        <action
+            android:id="@+id/action_startFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.potapov.generals.presentation.view.GameFragment"
+        android:label="GameFragment" >
+        <action
+            android:id="@+id/action_gameFragment_to_battleFragment"
+            app:destination="@id/battleFragment" />
+        <argument
+            android:name="army"
+            app:argType="com.potapov.generals.domain.entity.Army" />
+    </fragment>
+    <fragment
+        android:id="@+id/battleFragment"
+        android:name="com.potapov.generals.presentation.view.BattleFragment"
+        android:label="BattleFragment" >
+        <argument
+            android:name="statistic"
+            app:argType="com.potapov.generals.domain.entity.Statistic" />
+    </fragment>
 </navigation>

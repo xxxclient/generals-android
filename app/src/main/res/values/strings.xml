@@ -18,6 +18,8 @@
 
     <!-- Текст -->
     <string name="resources">Resources</string>
+    <string name="you_were_attacked">You were attacked!</string>
+    <string name="to_battle">To battle</string>
 
     <!-- Здания -->
     <string name="headquarters">Headquarters</string> <!-- Штаб -->
