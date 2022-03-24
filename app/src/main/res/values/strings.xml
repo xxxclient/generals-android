@@ -1,3 +1,44 @@
 <resources>
     <string name="app_name">Generals</string>
+
+    <!-- Кнопки -->
+    <string name="rules">Rules</string>
+    <string name="settings">Settings</string>
+    <string name="new_game">New game</string>
+    <string name="continue_game">Continue game</string>
+    <string name="exit">Exit</string>
+    <string name="back">Back</string>
+    <string name="choose_army">Choose army</string>
+    <string name="pause">Pause</string>
+
+    <!-- Армии -->
+    <string name="usa">USA</string>
+    <string name="china">China</string>
+    <string name="russia">Russia</string>
+
+    <!-- Текст -->
+    <string name="resources">Resources</string>
+
+    <!-- Здания -->
+    <string name="headquarters">Headquarters</string> <!-- Штаб -->
+    <string name="oil_derrick">Oil derrick</string> <!-- Нефтяная вышка -->
+    <string name="barracks">Barracks</string> <!-- Казарма -->
+    <string name="factory">Factory</string> <!-- Завод -->
+    <string name="aerodrome">Aerodrome</string> <!-- Аэродром -->
+    <string name="laboratory">Laboratory</string> <!-- Лаборатория -->
+
+    <!-- Завод -->
+    <string name="tank">Tank</string> <!-- Танк -->
+    <string name="armored_personnel_carrier">Armored personnel carrier</string> <!-- Бронетранспортёр -->
+    <string name="armored_car">Armored car</string> <!-- Бронеавтомобиль-->
+
+    <!-- Казарма -->
+    <string name="shooter">Shooter</string> <!-- Стрелок -->
+    <string name="grenade_launcher">Grenade launcher</string> <!-- Гранатометчик -->
+    <string name="sniper">Sniper</string> <!-- Снайпер -->
+
+    <!-- Аэродром -->
+    <string name="fighter">Fighter</string> <!-- Самолет -->
+    <string name="helicopter">Helicopter</string> <!-- Вертолет -->
+
 </resources>
