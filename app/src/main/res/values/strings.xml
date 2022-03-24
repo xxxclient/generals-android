@@ -29,7 +29,7 @@
 
     <!-- Завод -->
     <string name="tank">Tank</string> <!-- Танк -->
-    <string name="armored_personnel_carrier">Armored personnel carrier</string> <!-- Бронетранспортёр -->
+    <string name="apс">Armored personnel carrier</string> <!-- Бронетранспортёр (БТР)-->
     <string name="armored_car">Armored car</string> <!-- Бронеавтомобиль-->
 
     <!-- Казарма -->

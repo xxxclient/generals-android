@@ -1,7 +1,8 @@
-package com.potapov.generals
+package com.potapov.generals.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.potapov.generals.R
 
 class MainActivity : AppCompatActivity() {
 
