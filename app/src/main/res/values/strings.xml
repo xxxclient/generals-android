@@ -16,10 +16,31 @@
     <string name="china">China</string>
     <string name="russia">Russia</string>
 
-    <!-- Текст -->
+    <!-- База -->
     <string name="resources">Resources</string>
-    <string name="you_were_attacked">You were attacked!</string>
-    <string name="to_battle">To battle</string>
+
+    <!-- Битва -->
+    <string name="battle_title">Battle</string>
+
+    <!-- Диалог Битва -->
+    <string name="dialog_battle_title">You were attacked!</string>
+    <string name="dialog_battle_to_battle">To battle</string>
+
+    <!-- Диалог Победа -->
+    <string name="dialog_win_title">You win!</string>
+    <string name="dialog_win_to_base">To Base</string>
+
+    <!-- Диалог Поражение -->
+    <string name="dialog_lose_title">You lose!</string>
+    <string name="dialog_lose_to_base">To Base</string>
+
+    <!-- Диалог Пауза -->
+    <string name="dialog_pause_title">Pause</string>
+    <string name="dialog_pause_continue">Continue</string>
+
+    <!-- Диалог Настройки -->
+    <string name="dialog_settings_title">Settings</string>
+    <string name="dialog_settings_close">Close</string>
 
     <!-- Здания -->
     <string name="headquarters">Headquarters</string> <!-- Штаб -->
