@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Aerodrome(
+data class Airbase(
     val level: Int,
     val fighterCount: Int,
     val helicopterCount: Int,
