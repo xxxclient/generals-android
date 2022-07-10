@@ -5,7 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class GrenadeLauncher(
-    val createTime: Int,
+    val creationTime: Int,
     val level: Int,
     val life: Int,
     val attack: Int,

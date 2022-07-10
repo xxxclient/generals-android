@@ -52,8 +52,8 @@
 
     <!-- Завод -->
     <string name="tank">Tank</string> <!-- Танк -->
-    <string name="apс">Armored personnel carrier</string> <!-- Бронетранспортёр (БТР)-->
-    <string name="armored_car">Armored car</string> <!-- Бронеавтомобиль-->
+    <string name="howitzer">Howitzer</string> <!-- Гаубийца -->
+    <string name="armored_car">Armored car</string> <!-- Бронеавтомобиль -->
 
     <!-- Казарма -->
     <string name="shooter">Shooter</string> <!-- Стрелок -->

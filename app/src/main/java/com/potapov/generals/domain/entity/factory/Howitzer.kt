@@ -4,8 +4,8 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Apc(
-    val createTime: Int,
+data class Howitzer(
+    val creationTime: Int,
     val level: Int,
     val life: Int,
     val attack: Int,

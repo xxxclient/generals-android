@@ -3,8 +3,8 @@ package com.potapov.generals.domain.entity
 import android.os.Parcelable
 import com.potapov.generals.domain.entity.building.Airbase
 import com.potapov.generals.domain.entity.building.Barracks
-import com.potapov.generals.domain.entity.building.Factory
 import com.potapov.generals.domain.entity.building.CommandCenter
+import com.potapov.generals.domain.entity.building.Factory
 import com.potapov.generals.domain.entity.building.Laboratory
 import com.potapov.generals.domain.entity.building.OilDerrick
 import kotlinx.parcelize.Parcelize
@@ -24,7 +24,7 @@ data class Statistic(
     companion object {
 
         val DEFAULT = Statistic(
-            Airbase(0, 0, 0),
+            Airbase(0, 0, 0, 0),
             Barracks(0, 0, 0, 0),
             Factory(0, 0, 0, 0),
             CommandCenter(0),

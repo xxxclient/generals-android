@@ -1,6 +1,7 @@
 package com.potapov.generals.presentation.view
 
 import android.app.Dialog
+import android.graphics.Color.TRANSPARENT
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.potapov.generals.databinding.DialogBattleBinding
 import com.potapov.generals.databinding.FragmentGameBinding
+import com.potapov.generals.domain.entity.Building
 import com.potapov.generals.domain.entity.Statistic
 
 class GameFragment : Fragment() {
@@ -38,9 +40,20 @@ class GameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnBattleDialog.setOnClickListener {
-            _bindingDialogBattle = DialogBattleBinding.inflate(layoutInflater)
-            showBattleDialog()
+        binding.apply {
+            btnBattleDialog.setOnClickListener {
+                _bindingDialogBattle = DialogBattleBinding.inflate(layoutInflater)
+                showBattleDialog()
+            }
+            ivGameCommandCenter.setOnClickListener { launchBuildingFragment(Building.COMMAND_CENTER) }
+            ivGameOilDerrick.setOnClickListener { launchBuildingFragment(Building.OIL_DERRICK) }
+            ivGameReactor.setOnClickListener { launchBuildingFragment(Building.REACTOR) }
+            ivGameBarracks.setOnClickListener { launchBuildingFragment(Building.BARRACKS) }
+            ivGameAcademy.setOnClickListener { launchBuildingFragment(Building.ACADEMY) }
+            ivGameLaboratory.setOnClickListener { launchBuildingFragment(Building.LABORATORY) }
+            ivGameFactory.setOnClickListener { launchBuildingFragment(Building.FACTORY) }
+            ivGameAirbase.setOnClickListener { launchBuildingFragment(Building.AIRBASE) }
+            ivGameShipyard.setOnClickListener { launchBuildingFragment(Building.SHIPYARD) }
         }
     }
 
@@ -58,7 +71,7 @@ class GameFragment : Fragment() {
                     or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                     or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                     or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
-            setBackgroundDrawable(ColorDrawable(android.R.color.transparent))
+            setBackgroundDrawable(ColorDrawable(TRANSPARENT))
         }
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(bindingDialogBattle.root)
@@ -72,6 +85,10 @@ class GameFragment : Fragment() {
 
     private fun launchBattleFragment(statistic: Statistic) = findNavController().navigate(
         GameFragmentDirections.actionGameFragmentToBattleFragment(statistic)
+    )
+
+    private fun launchBuildingFragment(building: Building) = findNavController().navigate(
+        GameFragmentDirections.actionGameFragmentToBuildingFragment(building)
     )
 
     override fun onDestroyView() {

@@ -56,7 +56,7 @@
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/rus_building_command_center"
-        app:layout_constraintBottom_toTopOf="@id/iv_game_laboratory"
+        app:layout_constraintBottom_toTopOf="@id/iv_game_barracks"
         app:layout_constraintEnd_toStartOf="@+id/iv_game_oil_derrick"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_game_app_bar" />
@@ -69,9 +69,22 @@
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/rus_building_oil_derrick"
-        app:layout_constraintBottom_toTopOf="@+id/iv_game_factory"
-        app:layout_constraintEnd_toStartOf="@+id/iv_game_barracks"
+        app:layout_constraintBottom_toTopOf="@+id/iv_game_academy"
+        app:layout_constraintEnd_toStartOf="@+id/iv_game_reactor"
         app:layout_constraintStart_toEndOf="@+id/iv_game_command_center"
+        app:layout_constraintTop_toBottomOf="@+id/iv_game_app_bar" />
+
+    <ImageView
+        android:id="@+id/iv_game_reactor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/rus_building_barracks"
+        app:layout_constraintBottom_toTopOf="@+id/iv_game_laboratory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_game_oil_derrick"
         app:layout_constraintTop_toBottomOf="@+id/iv_game_app_bar" />
 
     <ImageView
@@ -82,10 +95,23 @@
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/rus_building_barracks"
+        app:layout_constraintBottom_toTopOf="@+id/iv_game_factory"
+        app:layout_constraintEnd_toStartOf="@+id/iv_game_academy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_game_command_center" />
+
+    <ImageView
+        android:id="@+id/iv_game_academy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/rus_building_factory"
         app:layout_constraintBottom_toTopOf="@+id/iv_game_airbase"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/iv_game_oil_derrick"
-        app:layout_constraintTop_toBottomOf="@+id/iv_game_app_bar" />
+        app:layout_constraintEnd_toStartOf="@+id/iv_game_laboratory"
+        app:layout_constraintStart_toEndOf="@+id/iv_game_barracks"
+        app:layout_constraintTop_toBottomOf="@+id/iv_game_oil_derrick" />
 
     <ImageView
         android:id="@+id/iv_game_laboratory"
@@ -94,11 +120,11 @@
         android:background="?attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
-        android:src="@drawable/rus_building_laboratory"
-        app:layout_constraintBottom_toTopOf="@+id/iv_game_ad"
-        app:layout_constraintEnd_toStartOf="@+id/iv_game_factory"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_game_command_center" />
+        android:src="@drawable/rus_building_airbase"
+        app:layout_constraintBottom_toTopOf="@+id/iv_game_shipyard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_game_academy"
+        app:layout_constraintTop_toBottomOf="@+id/iv_game_reactor" />
 
     <ImageView
         android:id="@+id/iv_game_factory"
@@ -107,11 +133,11 @@
         android:background="?attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
-        android:src="@drawable/rus_building_factory"
+        android:src="@drawable/rus_building_barracks"
         app:layout_constraintBottom_toTopOf="@+id/iv_game_ad"
         app:layout_constraintEnd_toStartOf="@+id/iv_game_airbase"
-        app:layout_constraintStart_toEndOf="@+id/iv_game_laboratory"
-        app:layout_constraintTop_toBottomOf="@+id/iv_game_oil_derrick" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_game_barracks" />
 
     <ImageView
         android:id="@+id/iv_game_airbase"
@@ -120,11 +146,24 @@
         android:background="?attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
-        android:src="@drawable/rus_building_airbase"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_game_factory"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/rus_building_factory"
+        app:layout_constraintBottom_toTopOf="@+id/iv_game_ad"
+        app:layout_constraintEnd_toStartOf="@+id/iv_game_shipyard"
         app:layout_constraintStart_toEndOf="@+id/iv_game_factory"
-        app:layout_constraintTop_toBottomOf="@+id/iv_game_barracks" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_game_academy" />
+
+    <ImageView
+        android:id="@+id/iv_game_shipyard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/rus_building_airbase"
+        app:layout_constraintBottom_toTopOf="@+id/iv_game_ad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_game_airbase"
+        app:layout_constraintTop_toBottomOf="@+id/iv_game_laboratory" />
 
     <ProgressBar
         android:id="@+id/tv_game_command_center_life"
@@ -153,6 +192,19 @@
         app:layout_constraintTop_toTopOf="@+id/iv_game_oil_derrick" />
 
     <ProgressBar
+        android:id="@+id/tv_game_reactor_life"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:progress="50"
+        android:progressBackgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_game_reactor"
+        app:layout_constraintStart_toStartOf="@+id/iv_game_reactor"
+        app:layout_constraintTop_toTopOf="@+id/iv_game_reactor" />
+
+    <ProgressBar
         android:id="@+id/tv_game_barracks_life"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
@@ -164,6 +216,19 @@
         app:layout_constraintEnd_toEndOf="@+id/iv_game_barracks"
         app:layout_constraintStart_toStartOf="@+id/iv_game_barracks"
         app:layout_constraintTop_toTopOf="@+id/iv_game_barracks" />
+
+    <ProgressBar
+        android:id="@+id/tv_game_academy_life"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:progress="50"
+        android:progressBackgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_game_academy"
+        app:layout_constraintStart_toStartOf="@+id/iv_game_academy"
+        app:layout_constraintTop_toTopOf="@+id/iv_game_academy" />
 
     <ProgressBar
         android:id="@+id/tv_game_laboratory_life"
@@ -204,14 +269,27 @@
         app:layout_constraintStart_toStartOf="@+id/iv_game_airbase"
         app:layout_constraintTop_toTopOf="@+id/iv_game_airbase" />
 
+    <ProgressBar
+        android:id="@+id/tv_game_shipyard_life"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:progress="50"
+        android:progressBackgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_game_shipyard"
+        app:layout_constraintStart_toStartOf="@+id/iv_game_shipyard"
+        app:layout_constraintTop_toTopOf="@+id/iv_game_shipyard" />
+
     <TextView
         android:id="@+id/tv_game_command_center_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="16dp"
-        android:text="Level: 1"
+        android:text="Command center"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/iv_game_command_center"
         app:layout_constraintTop_toBottomOf="@+id/tv_game_command_center_life" />
 
@@ -220,55 +298,88 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="16dp"
-        android:text="Level: 1"
+        android:text="Oil derrick"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/tv_game_oil_derrick_life"
         app:layout_constraintTop_toBottomOf="@+id/tv_game_oil_derrick_life" />
+
+    <TextView
+        android:id="@+id/tv_game_reactor_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:text="Reactor"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_game_reactor_life"
+        app:layout_constraintTop_toBottomOf="@+id/tv_game_reactor_life" />
 
     <TextView
         android:id="@+id/tv_game_barracks_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="16dp"
-        android:text="Level: 1"
+        android:text="Barracks"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/tv_game_barracks_life"
         app:layout_constraintTop_toBottomOf="@+id/tv_game_barracks_life" />
+
+    <TextView
+        android:id="@+id/tv_game_academy_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:text="Academy"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_game_academy_life"
+        app:layout_constraintTop_toBottomOf="@+id/tv_game_academy_life" />
 
     <TextView
         android:id="@+id/tv_game_laboratory_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="16dp"
-        android:text="Level: 1"
+        android:text="Laboratory"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/tv_game_laboratory_life"
         app:layout_constraintTop_toBottomOf="@+id/tv_game_laboratory_life" />
 
     <TextView
-        android:id="@+id/tv_game_command_factory_level"
+        android:id="@+id/tv_game_factory_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="16dp"
-        android:text="Level: 1"
+        android:text="Factory"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/tv_game_factory_life"
         app:layout_constraintTop_toBottomOf="@+id/tv_game_factory_life" />
 
     <TextView
-        android:id="@+id/tv_game_command_airbase_level"
+        android:id="@+id/tv_game_airbase_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="16dp"
-        android:text="Level: 1"
+        android:text="Airbase"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/tv_game_airbase_life"
         app:layout_constraintTop_toBottomOf="@+id/tv_game_airbase_life" />
+
+    <TextView
+        android:id="@+id/tv_game_shipyard_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:text="Shipyard"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_game_shipyard_life"
+        app:layout_constraintTop_toBottomOf="@+id/tv_game_shipyard_life" />
 
     <ImageView
         android:id="@+id/iv_game_ad"

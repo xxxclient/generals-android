@@ -4,9 +4,9 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Airbase(
+data class Shipyard(
     val level: Int,
-    val fighterCount: Int,
-    val helicopterCount: Int,
-    val droneCount: Int,
+    val boatCount: Int,
+    val frigateCount: Int,
+    val submarineCount: Int,
 ) : Parcelable
