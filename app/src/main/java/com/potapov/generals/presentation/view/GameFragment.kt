@@ -41,7 +41,7 @@ class GameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            btnBack.setOnClickListener { launchWelcomeFragment() }
+            btnGameBack.setOnClickListener { launchWelcomeFragment() }
             btnBattleDialog.setOnClickListener {
                 _bindingDialogBattle = DialogBattleBinding.inflate(layoutInflater)
                 showBattleDialog()

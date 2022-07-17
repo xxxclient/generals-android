@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.potapov.generals.databinding.FragmentBattleBinding
-import com.potapov.generals.domain.entity.Statistic
+import com.potapov.generals.domain.entity.Army
 
 class BattleFragment : Fragment() {
 
@@ -28,10 +29,15 @@ class BattleFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.apply {
+            btnBattleBack.setOnClickListener { launchGameFragment(Army.RUSSIA) }
+        }
     }
 
-    private fun launchGameFragment(statistic: Statistic) {
-    }
+    private fun launchGameFragment(army: Army) = findNavController().navigate(
+        BattleFragmentDirections.actionBattleFragmentToGameFragment(army)
+    )
 
     override fun onDestroyView() {
         super.onDestroyView()

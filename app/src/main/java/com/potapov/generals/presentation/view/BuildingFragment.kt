@@ -32,7 +32,7 @@ class BuildingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            btnBack.setOnClickListener { launchGameFragment(Army.RUSSIA) }
+            btnBuildingBack.setOnClickListener { launchGameFragment(Army.RUSSIA) }
             tvBuildingName.text = args.building.name
 
             when (args.building) {

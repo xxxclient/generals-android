@@ -8,8 +8,8 @@
     <ImageView
         android:id="@+id/iv_game_app_bar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:src="@android:color/darker_gray"
+        android:layout_height="24dp"
+        android:src="@color/cardview_dark_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -18,7 +18,7 @@
         android:id="@+id/tv_game_timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="00:55"
+        android:text="$100"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -26,36 +26,6 @@
         app:layout_constraintEnd_toEndOf="@+id/iv_game_app_bar"
         app:layout_constraintStart_toStartOf="@+id/iv_game_app_bar"
         app:layout_constraintTop_toTopOf="@+id/iv_game_app_bar" />
-
-    <Button
-        android:id="@+id/btn_pause"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/pause"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_game_app_bar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/back"
-        app:layout_constraintStart_toEndOf="@+id/btn_pause"
-        app:layout_constraintTop_toTopOf="@+id/btn_pause" />
-
-    <Button
-        android:id="@+id/btn_battle_dialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="Battle dialog"
-        android:translationZ="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_game_app_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/iv_game_command_center"
@@ -143,7 +113,7 @@
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/rus_building_barracks"
-        app:layout_constraintBottom_toTopOf="@+id/iv_game_ad"
+        app:layout_constraintBottom_toTopOf="@+id/ivGameBar"
         app:layout_constraintEnd_toStartOf="@+id/iv_game_airbase"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_game_barracks" />
@@ -156,7 +126,7 @@
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/rus_building_factory"
-        app:layout_constraintBottom_toTopOf="@+id/iv_game_ad"
+        app:layout_constraintBottom_toTopOf="@+id/ivGameBar"
         app:layout_constraintEnd_toStartOf="@+id/iv_game_shipyard"
         app:layout_constraintStart_toEndOf="@+id/iv_game_factory"
         app:layout_constraintTop_toBottomOf="@+id/iv_game_academy" />
@@ -169,7 +139,7 @@
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/rus_building_airbase"
-        app:layout_constraintBottom_toTopOf="@+id/iv_game_ad"
+        app:layout_constraintBottom_toTopOf="@+id/ivGameBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_game_airbase"
         app:layout_constraintTop_toBottomOf="@+id/iv_game_laboratory" />
@@ -391,12 +361,43 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_game_shipyard_life" />
 
     <ImageView
-        android:id="@+id/iv_game_ad"
+        android:id="@+id/ivGameBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:src="@android:color/darker_gray"
+        android:src="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnGameBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="@+id/ivGameBar"
+        app:layout_constraintStart_toStartOf="@+id/ivGameBar"
+        app:layout_constraintTop_toTopOf="@+id/ivGameBar" />
+
+    <Button
+        android:id="@+id/btn_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/pause"
+        app:layout_constraintBottom_toBottomOf="@+id/btnGameBack"
+        app:layout_constraintStart_toEndOf="@+id/btnGameBack"
+        app:layout_constraintTop_toTopOf="@+id/btnGameBack" />
+
+    <Button
+        android:id="@+id/btn_battle_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Dialog"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivGameBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_game_airbase" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

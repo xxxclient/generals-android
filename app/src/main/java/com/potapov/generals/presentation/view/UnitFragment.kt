@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.potapov.generals.databinding.FragmentBattleBinding
 import com.potapov.generals.databinding.FragmentUnitBinding
-import com.potapov.generals.domain.entity.Statistic
+import com.potapov.generals.domain.entity.Building
 
 class UnitFragment : Fragment() {
 
@@ -30,11 +30,15 @@ class UnitFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tvBuildingName.text = args.unit.name
+        binding.apply {
+            btnUnitBack.setOnClickListener { launchBuildingFragment(Building.BARRACKS) }
+            tvBuildingName.text = args.unit.name
+        }
     }
 
-    private fun launchGameFragment(statistic: Statistic) {
-    }
+    private fun launchBuildingFragment(building: Building) = findNavController().navigate(
+        UnitFragmentDirections.actionUnitFragmentToBuildingFragment(building)
+    )
 
     override fun onDestroyView() {
         super.onDestroyView()

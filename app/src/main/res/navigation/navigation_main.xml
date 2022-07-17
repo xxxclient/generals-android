@@ -44,13 +44,21 @@
         android:label="GameFragment" >
         <action
             android:id="@+id/action_gameFragment_to_battleFragment"
-            app:destination="@id/battleFragment" />
+            app:destination="@id/battleFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
         <argument
             android:name="army"
             app:argType="com.potapov.generals.domain.entity.Army" />
         <action
             android:id="@+id/action_gameFragment_to_buildingFragment"
-            app:destination="@id/buildingFragment" />
+            app:destination="@id/buildingFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_gameFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
@@ -66,7 +74,9 @@
             app:argType="com.potapov.generals.domain.entity.Statistic" />
         <action
             android:id="@+id/action_battleFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
+            app:destination="@id/gameFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/unitFragment"
@@ -77,7 +87,9 @@
             app:argType="com.potapov.generals.domain.entity.UnitType" />
         <action
             android:id="@+id/action_unitFragment_to_buildingFragment"
-            app:destination="@id/buildingFragment" />
+            app:destination="@id/buildingFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/buildingFragment"
@@ -85,12 +97,18 @@
         android:label="BuildingFragment" >
         <action
             android:id="@+id/action_buildingFragment_to_unitFragment"
-            app:destination="@id/unitFragment" />
+            app:destination="@id/unitFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
         <argument
             android:name="building"
             app:argType="com.potapov.generals.domain.entity.Building" />
         <action
             android:id="@+id/action_buildingFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
+            app:destination="@id/gameFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right" />
     </fragment>
 </navigation>
