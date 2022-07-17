@@ -35,6 +35,7 @@ class StartFragment : Fragment() {
         viewModel = ViewModelProvider(this)[StartViewModel::class.java]
         observeViewModel()
         binding.apply {
+            btnStartBack.setOnClickListener { launchWelcomeFragment() }
             etStartUserName.doOnTextChanged { text, start, before, count ->
                 viewModel.resetErrorInputName()
             }
@@ -61,6 +62,12 @@ class StartFragment : Fragment() {
     private fun launchGameFragment(army: Army) {
         findNavController().navigate(
             StartFragmentDirections.actionStartFragmentToGameFragment(army)
+        )
+    }
+
+    private fun launchWelcomeFragment() {
+        findNavController().navigate(
+            StartFragmentDirections.actionStartFragmentToWelcomeFragment()
         )
     }
 

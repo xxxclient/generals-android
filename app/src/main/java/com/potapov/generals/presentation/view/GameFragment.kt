@@ -41,6 +41,7 @@ class GameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
+            btnBack.setOnClickListener { launchWelcomeFragment() }
             btnBattleDialog.setOnClickListener {
                 _bindingDialogBattle = DialogBattleBinding.inflate(layoutInflater)
                 showBattleDialog()
@@ -89,6 +90,10 @@ class GameFragment : Fragment() {
 
     private fun launchBuildingFragment(building: Building) = findNavController().navigate(
         GameFragmentDirections.actionGameFragmentToBuildingFragment(building)
+    )
+
+    private fun launchWelcomeFragment() = findNavController().navigate(
+        GameFragmentDirections.actionGameFragmentToWelcomeFragment()
     )
 
     override fun onDestroyView() {

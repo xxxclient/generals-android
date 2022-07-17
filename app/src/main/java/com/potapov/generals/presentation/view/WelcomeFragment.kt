@@ -34,11 +34,24 @@ class WelcomeFragment : Fragment() {
         viewModel.userList.observe(viewLifecycleOwner) {
             if (it.isEmpty()) binding.btnContinueGame.visibility = View.GONE
         }
-        binding.btnNewGame.setOnClickListener { launchStartFragment() }
+        binding.apply {
+            btnNewGame.setOnClickListener { launchStartFragment() }
+            btnContinueGame.setOnClickListener { launchGameFragment() }
+            btnExit.setOnClickListener { exitFromGame() }
+        }
+    }
+
+    private fun exitFromGame() = activity?.apply {
+        moveTaskToBack(true)
+        finish()
     }
 
     private fun launchStartFragment() {
         findNavController().navigate(R.id.action_welcomeFragment_to_startFragment)
+    }
+
+    private fun launchGameFragment() {
+        findNavController().navigate(R.id.action_welcomeFragment_to_gameFragment)
     }
 
     override fun onDestroyView() {

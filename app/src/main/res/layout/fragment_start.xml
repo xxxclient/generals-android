@@ -6,6 +6,16 @@
     android:background="@drawable/bg_city">
 
     <Button
+        android:id="@+id/btnStartBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/btnStartGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,11 +45,11 @@
             android:layout_height="wrap_content"
             android:text="@string/russia" />
 
-        <RadioButton
-            android:id="@+id/rbStartArmyUkraine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ukraine" />
+<!--        <RadioButton-->
+<!--            android:id="@+id/rbStartArmyUkraine"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/ukraine" />-->
 
         <RadioButton
             android:id="@+id/rbStartArmyUsa"
@@ -77,11 +87,11 @@
             android:layout_height="wrap_content"
             android:text="@string/russia" />
 
-        <RadioButton
-            android:id="@+id/rbStartEnemyUkraine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ukraine" />
+<!--        <RadioButton-->
+<!--            android:id="@+id/rbStartEnemyUkraine"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/ukraine" />-->
 
         <RadioButton
             android:id="@+id/rbStartEnemyUsa"
