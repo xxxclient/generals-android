@@ -11,10 +11,19 @@
     <string name="choose_army">Choose army</string>
     <string name="pause">Pause</string>
 
+    <!-- Start -->
+    <string name="start_choose_your_army">Choose your army</string>
+    <string name="start_choose_your_enemy">Choose your enemy</string>
+    <string name="start_game">Start game</string>
+    <string name="start_enter_your_name">Enter your name</string>
+    <string name="start_error_input_name">Invalid name</string>
+
     <!-- Армии -->
+    <string name="russia">Russia</string>
+    <string name="ukraine">Ukraine</string>
     <string name="usa">USA</string>
     <string name="china">China</string>
-    <string name="russia">Russia</string>
+    <string name="iraq">Iraq</string>
 
     <!-- База -->
     <string name="resources">Resources</string>

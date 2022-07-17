@@ -57,7 +57,7 @@
         android:label="UnitFragment" >
         <argument
             android:name="unit"
-            app:argType="com.potapov.generals.domain.entity.Unit" />
+            app:argType="com.potapov.generals.domain.entity.UnitType" />
         <action
             android:id="@+id/action_unitFragment_to_buildingFragment"
             app:destination="@id/buildingFragment" />

@@ -10,7 +10,7 @@ import androidx.navigation.fragment.navArgs
 import com.potapov.generals.databinding.FragmentBuildingBinding
 import com.potapov.generals.domain.entity.Army
 import com.potapov.generals.domain.entity.Building
-import com.potapov.generals.domain.entity.Unit
+import com.potapov.generals.domain.entity.UnitType
 
 class BuildingFragment : Fragment() {
 
@@ -37,45 +37,45 @@ class BuildingFragment : Fragment() {
 
             when (args.building) {
                 Building.ACADEMY -> {
-                    Unit.SHOOTER
+                    UnitType.SHOOTER
                 }
                 Building.AIRBASE -> {
-                    ivBuildingFirstUnit.setOnClickListener { launchUnitFragment(Unit.DRONE) }
-                    ivBuildingSecondUnit.setOnClickListener { launchUnitFragment(Unit.SHOOTER) }
-                    ivBuildingThirdUnit.setOnClickListener { launchUnitFragment(Unit.FIGHTER) }
+                    ivBuildingFirstUnit.setOnClickListener { launchUnitFragment(UnitType.DRONE) }
+                    ivBuildingSecondUnit.setOnClickListener { launchUnitFragment(UnitType.HELICOPTER) }
+                    ivBuildingThirdUnit.setOnClickListener { launchUnitFragment(UnitType.FIGHTER) }
                 }
                 Building.BARRACKS -> {
-                    ivBuildingFirstUnit.setOnClickListener { launchUnitFragment(Unit.SHOOTER) }
-                    ivBuildingSecondUnit.setOnClickListener { launchUnitFragment(Unit.SNIPER) }
-                    ivBuildingThirdUnit.setOnClickListener { launchUnitFragment(Unit.GRENADE_LAUNCHER) }
+                    ivBuildingFirstUnit.setOnClickListener { launchUnitFragment(UnitType.SHOOTER) }
+                    ivBuildingSecondUnit.setOnClickListener { launchUnitFragment(UnitType.SNIPER) }
+                    ivBuildingThirdUnit.setOnClickListener { launchUnitFragment(UnitType.GRENADE_LAUNCHER) }
                 }
                 Building.COMMAND_CENTER -> {
-                    Unit.SHOOTER
+                    UnitType.SHOOTER
                 }
                 Building.FACTORY -> {
-                    ivBuildingFirstUnit.setOnClickListener { launchUnitFragment(Unit.ARMORED_CAR) }
-                    ivBuildingSecondUnit.setOnClickListener { launchUnitFragment(Unit.HOWITZER) }
-                    ivBuildingThirdUnit.setOnClickListener { launchUnitFragment(Unit.TANK) }
+                    ivBuildingFirstUnit.setOnClickListener { launchUnitFragment(UnitType.ARMORED_CAR) }
+                    ivBuildingSecondUnit.setOnClickListener { launchUnitFragment(UnitType.HOWITZER) }
+                    ivBuildingThirdUnit.setOnClickListener { launchUnitFragment(UnitType.TANK) }
                 }
                 Building.LABORATORY -> {
-                    Unit.SHOOTER
+                    UnitType.SHOOTER
                 }
                 Building.OIL_DERRICK -> {
-                    Unit.SHOOTER
+                    UnitType.SHOOTER
                 }
                 Building.REACTOR -> {
-                    Unit.SHOOTER
+                    UnitType.SHOOTER
                 }
                 Building.SHIPYARD -> {
-                    ivBuildingFirstUnit.setOnClickListener { launchUnitFragment(Unit.BOAT) }
-                    ivBuildingSecondUnit.setOnClickListener { launchUnitFragment(Unit.FRIGATE) }
-                    ivBuildingThirdUnit.setOnClickListener { launchUnitFragment(Unit.SUBMARINE) }
+                    ivBuildingFirstUnit.setOnClickListener { launchUnitFragment(UnitType.BOAT) }
+                    ivBuildingSecondUnit.setOnClickListener { launchUnitFragment(UnitType.FRIGATE) }
+                    ivBuildingThirdUnit.setOnClickListener { launchUnitFragment(UnitType.SUBMARINE) }
                 }
             }
         }
     }
 
-    private fun launchUnitFragment(unit: Unit) = findNavController().navigate(
+    private fun launchUnitFragment(unit: UnitType) = findNavController().navigate(
         BuildingFragmentDirections.actionBuildingFragmentToUnitFragment(unit)
     )
 

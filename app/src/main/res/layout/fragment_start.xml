@@ -6,36 +6,146 @@
     android:background="@drawable/bg_city">
 
     <Button
-        android:id="@+id/btn_russia"
+        android:id="@+id/btnStartGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/russia"
-        app:layout_constraintBottom_toTopOf="@+id/btn_china"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
-
-    <Button
-        android:id="@+id/btn_china"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/china"
-        app:layout_constraintBottom_toTopOf="@+id/btn_usa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_russia" />
-
-    <Button
-        android:id="@+id/btn_usa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/usa"
+        android:layout_marginTop="10dp"
+        android:text="@string/start_game"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_china" />
+        app:layout_constraintTop_toBottomOf="@+id/rgStartArmy"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <RadioGroup
+        android:id="@+id/rgStartArmy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_rectangle_corner"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnStartGame"
+        app:layout_constraintEnd_toEndOf="@+id/tvStartArmy"
+        app:layout_constraintStart_toStartOf="@+id/tvStartArmy"
+        app:layout_constraintTop_toBottomOf="@+id/tvStartArmy">
+
+        <RadioButton
+            android:id="@+id/rbStartArmyRussia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/russia" />
+
+        <RadioButton
+            android:id="@+id/rbStartArmyUkraine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ukraine" />
+
+        <RadioButton
+            android:id="@+id/rbStartArmyUsa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/usa" />
+
+        <RadioButton
+            android:id="@+id/rbStartArmyChina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/china" />
+
+        <RadioButton
+            android:id="@+id/rbStartArmyIraq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/iraq" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rgStartEnemy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rectangle_corner"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rgStartArmy"
+        app:layout_constraintEnd_toEndOf="@+id/tvStartEnemy"
+        app:layout_constraintStart_toStartOf="@+id/tvStartEnemy"
+        app:layout_constraintTop_toTopOf="@+id/rgStartArmy">
+
+        <RadioButton
+            android:id="@+id/rbStartEnemyRussia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/russia" />
+
+        <RadioButton
+            android:id="@+id/rbStartEnemyUkraine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ukraine" />
+
+        <RadioButton
+            android:id="@+id/rbStartEnemyUsa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/usa" />
+
+        <RadioButton
+            android:id="@+id/rbStartEnemyChina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/china" />
+
+        <RadioButton
+            android:id="@+id/rbStartEnemyIraq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/iraq" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvStartArmy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/start_choose_your_army"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/rgStartArmy"
+        app:layout_constraintEnd_toStartOf="@+id/tvStartEnemy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilStartUserName" />
+
+    <TextView
+        android:id="@+id/tvStartEnemy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_choose_your_enemy"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvStartArmy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvStartArmy"
+        app:layout_constraintTop_toTopOf="@+id/tvStartArmy" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilStartUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/tvStartArmy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etStartUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:hint="@string/start_enter_your_name"
+            android:maxLength="30"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

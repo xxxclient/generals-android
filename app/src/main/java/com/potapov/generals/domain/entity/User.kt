@@ -1,6 +1,6 @@
 package com.potapov.generals.domain.entity
 
-data class Unit(
+data class User(
     var userId: Int = UNDEFINED_ID,
     val name: String
 ) {
