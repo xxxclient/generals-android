@@ -8,7 +8,9 @@ import com.potapov.generals.data.mapper.UserMapper
 import com.potapov.generals.domain.entity.User
 import com.potapov.generals.domain.repository.UserRepository
 
-class UserRepositoryImpl(application: Application) : UserRepository {
+class UserRepositoryImpl(
+    application: Application
+) : UserRepository {
 
     private val userDao = AppDatabase.getInstance(application).userDao()
     private val mapper = UserMapper()
