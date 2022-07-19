@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Generals">
         <activity
+            android:theme="@style/Theme.Generals.SplashScreen"
             android:name=".presentation.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
