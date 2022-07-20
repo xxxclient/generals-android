@@ -1,20 +1,19 @@
 package com.potapov.generals.presentation.view_model
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.potapov.generals.data.repository.UserRepositoryImpl
 import com.potapov.generals.domain.entity.User
 import com.potapov.generals.domain.usecase.UserUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class StartViewModel(application: Application) : AndroidViewModel(application) {
-
-    private val repository = UserRepositoryImpl(application)
-
-    private val userUseCase = UserUseCase(repository)
+@HiltViewModel
+class StartViewModel @Inject constructor(
+    private val userUseCase: UserUseCase
+) : ViewModel() {
 
     val userList = userUseCase.getUserList()
 

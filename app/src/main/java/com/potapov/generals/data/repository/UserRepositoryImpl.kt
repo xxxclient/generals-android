@@ -1,22 +1,20 @@
 package com.potapov.generals.data.repository
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
-import com.potapov.generals.data.database.AppDatabase
+import com.potapov.generals.data.dao.UserDao
 import com.potapov.generals.data.mapper.UserMapper
 import com.potapov.generals.domain.entity.User
 import com.potapov.generals.domain.repository.UserRepository
+import javax.inject.Inject
 
-class UserRepositoryImpl(
-    application: Application
+class UserRepositoryImpl @Inject constructor(
+    private val userDao: UserDao,
+    private val userMapper: UserMapper
 ) : UserRepository {
 
-    private val userDao = AppDatabase.getInstance(application).userDao()
-    private val mapper = UserMapper()
-
     override suspend fun addUser(user: User) {
-        userDao.addUser(mapper.mapEntityToDbModel(user))
+        userDao.addUser(userMapper.mapEntityToDbModel(user))
     }
 
     override suspend fun deleteUser(user: User) {
@@ -24,15 +22,15 @@ class UserRepositoryImpl(
     }
 
     override suspend fun editUser(user: User) {
-        userDao.addUser(mapper.mapEntityToDbModel(user))
+        userDao.addUser(userMapper.mapEntityToDbModel(user))
     }
 
     override suspend fun getUser(userId: Int): User {
         val dbModel = userDao.getUser(userId)
-        return mapper.mapDbModelToEntity(dbModel)
+        return userMapper.mapDbModelToEntity(dbModel)
     }
 
     override fun getUserList(): LiveData<List<User>> = Transformations.map(
         userDao.getUserList()
-    ) { mapper.mapListDbModelToListEntity(it) }
+    ) { userMapper.mapListDbModelToListEntity(it) }
 }

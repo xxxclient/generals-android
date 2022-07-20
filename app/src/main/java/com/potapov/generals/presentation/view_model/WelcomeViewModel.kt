@@ -1,15 +1,14 @@
 package com.potapov.generals.presentation.view_model
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import com.potapov.generals.data.repository.UserRepositoryImpl
+import androidx.lifecycle.ViewModel
 import com.potapov.generals.domain.usecase.UserUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class WelcomeViewModel(application: Application) : AndroidViewModel(application) {
-
-    private val repository = UserRepositoryImpl(application)
-
-    private val userUseCase = UserUseCase(repository)
+@HiltViewModel
+class WelcomeViewModel @Inject constructor(
+    private val userUseCase: UserUseCase
+) : ViewModel() {
 
     val userList = userUseCase.getUserList()
 }

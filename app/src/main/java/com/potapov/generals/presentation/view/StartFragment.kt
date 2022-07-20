@@ -6,20 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.potapov.generals.R
 import com.potapov.generals.databinding.FragmentStartBinding
 import com.potapov.generals.domain.entity.Army
 import com.potapov.generals.presentation.view_model.StartViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class StartFragment : Fragment() {
 
     private var _binding: FragmentStartBinding? = null
     private val binding: FragmentStartBinding
         get() = _binding ?: throw RuntimeException("FragmentStartBinding == null")
 
-    private lateinit var viewModel: StartViewModel
+    private val viewModel: StartViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,7 +34,6 @@ class StartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this)[StartViewModel::class.java]
         observeViewModel()
         binding.apply {
             btnStartBack.setOnClickListener { launchWelcomeFragment() }

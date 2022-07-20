@@ -3,8 +3,9 @@ package com.potapov.generals.domain.usecase
 import androidx.lifecycle.LiveData
 import com.potapov.generals.domain.entity.User
 import com.potapov.generals.domain.repository.UserRepository
+import javax.inject.Inject
 
-class UserUseCase(
+class UserUseCase @Inject constructor(
     private val userRepository: UserRepository
 ) {
 

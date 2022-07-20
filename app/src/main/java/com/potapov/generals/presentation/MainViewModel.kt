@@ -1,12 +1,11 @@
 package com.potapov.generals.presentation
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import com.potapov.generals.domain.usecase.UserUseCase
+import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MainViewModel(
-    application: Application,
-    userUseCase: UserUseCase
-) : AndroidViewModel(application) {
+@HiltViewModel
+class MainViewModel @Inject constructor(
+) : ViewModel() {
 
 }

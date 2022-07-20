@@ -4,26 +4,25 @@ import android.media.MediaPlayer
 import android.os.Build
 import android.os.Bundle
 import android.view.WindowManager
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import androidx.lifecycle.ViewModelProvider
-import com.potapov.generals.App
 import com.potapov.generals.R
 import com.potapov.generals.databinding.ActivityMainBinding
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private var _binding: ActivityMainBinding? = null
     private val binding: ActivityMainBinding
         get() = _binding ?: throw RuntimeException("ActivityMainBinding == null")
 
-    @Inject
-    lateinit var viewModelFactory: MainViewModelFactory
-    lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by viewModels()
+
     private lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,9 +31,6 @@ class MainActivity : AppCompatActivity() {
         installSplashScreen()
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        (applicationContext as App).appComponent.inject(this)
-        viewModel = ViewModelProvider(this, viewModelFactory)[MainViewModel::class.java]
 
         hideSystemBars()
 
