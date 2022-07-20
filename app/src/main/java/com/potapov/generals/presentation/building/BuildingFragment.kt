@@ -1,4 +1,4 @@
-package com.potapov.generals.presentation.view
+package com.potapov.generals.presentation.building
 
 import android.os.Bundle
 import android.view.LayoutInflater

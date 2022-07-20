@@ -1,4 +1,4 @@
-package com.potapov.generals.presentation.view
+package com.potapov.generals.presentation.game
 
 import android.app.Dialog
 import android.graphics.Color.TRANSPARENT

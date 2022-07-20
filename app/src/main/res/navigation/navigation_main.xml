@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.potapov.generals.presentation.view.WelcomeFragment"
+        android:name="com.potapov.generals.presentation.welcome.WelcomeFragment"
         android:label="WelcomeFragment" >
         <action
             android:id="@+id/action_welcomeFragment_to_startFragment"
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/startFragment"
-        android:name="com.potapov.generals.presentation.view.StartFragment"
+        android:name="com.potapov.generals.presentation.new_game.NewGameFragment"
         android:label="StartFragment" >
         <action
             android:id="@+id/action_startFragment_to_gameFragment"
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.potapov.generals.presentation.view.GameFragment"
+        android:name="com.potapov.generals.presentation.game.GameFragment"
         android:label="GameFragment" >
         <action
             android:id="@+id/action_gameFragment_to_battleFragment"
@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/battleFragment"
-        android:name="com.potapov.generals.presentation.view.BattleFragment"
+        android:name="com.potapov.generals.presentation.battle.BattleFragment"
         android:label="BattleFragment" >
         <argument
             android:name="statistic"
@@ -80,7 +80,7 @@
     </fragment>
     <fragment
         android:id="@+id/unitFragment"
-        android:name="com.potapov.generals.presentation.view.UnitFragment"
+        android:name="com.potapov.generals.presentation.unit.UnitFragment"
         android:label="UnitFragment" >
         <argument
             android:name="unit"
@@ -93,7 +93,7 @@
     </fragment>
     <fragment
         android:id="@+id/buildingFragment"
-        android:name="com.potapov.generals.presentation.view.BuildingFragment"
+        android:name="com.potapov.generals.presentation.building.BuildingFragment"
         android:label="BuildingFragment" >
         <action
             android:id="@+id/action_buildingFragment_to_unitFragment"

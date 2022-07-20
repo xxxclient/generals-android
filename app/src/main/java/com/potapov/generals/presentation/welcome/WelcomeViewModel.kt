@@ -1,4 +1,4 @@
-package com.potapov.generals.presentation.view_model
+package com.potapov.generals.presentation.welcome
 
 import androidx.lifecycle.ViewModel
 import com.potapov.generals.domain.usecase.UserUseCase

@@ -1,4 +1,4 @@
-package com.potapov.generals.presentation
+package com.potapov.generals.presentation.main
 
 import android.media.MediaPlayer
 import android.os.Build

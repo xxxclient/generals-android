@@ -1,4 +1,4 @@
-package com.potapov.generals.presentation.view
+package com.potapov.generals.presentation.welcome
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.potapov.generals.R
 import com.potapov.generals.databinding.FragmentWelcomeBinding
-import com.potapov.generals.presentation.view_model.WelcomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

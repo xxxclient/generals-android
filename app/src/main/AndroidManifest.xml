@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Generals">
         <activity
             android:theme="@style/Theme.Generals.SplashScreen"
-            android:name=".presentation.MainActivity"
+            android:name=".presentation.main.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

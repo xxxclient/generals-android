@@ -1,4 +1,4 @@
-package com.potapov.generals.presentation.view_model
+package com.potapov.generals.presentation.new_game
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class StartViewModel @Inject constructor(
+class NewGameViewModel @Inject constructor(
     private val userUseCase: UserUseCase
 ) : ViewModel() {
 

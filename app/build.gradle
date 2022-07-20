@@ -32,8 +32,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-        // Необходимо для ViewModelFactory
-        freeCompilerArgs += ['-Xjvm-default=enable']
     }
 
     buildFeatures { viewBinding true }

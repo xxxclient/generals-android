@@ -1,4 +1,4 @@
-package com.potapov.generals.presentation.view
+package com.potapov.generals.presentation.new_game
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,17 +11,16 @@ import androidx.navigation.fragment.findNavController
 import com.potapov.generals.R
 import com.potapov.generals.databinding.FragmentStartBinding
 import com.potapov.generals.domain.entity.Army
-import com.potapov.generals.presentation.view_model.StartViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class StartFragment : Fragment() {
+class NewGameFragment : Fragment() {
 
     private var _binding: FragmentStartBinding? = null
     private val binding: FragmentStartBinding
         get() = _binding ?: throw RuntimeException("FragmentStartBinding == null")
 
-    private val viewModel: StartViewModel by viewModels()
+    private val viewModel: NewGameViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -62,13 +61,13 @@ class StartFragment : Fragment() {
 
     private fun launchGameFragment(army: Army) {
         findNavController().navigate(
-            StartFragmentDirections.actionStartFragmentToGameFragment(army)
+            NewGameFragmentDirections.actionStartFragmentToGameFragment(army)
         )
     }
 
     private fun launchWelcomeFragment() {
         findNavController().navigate(
-            StartFragmentDirections.actionStartFragmentToWelcomeFragment()
+            NewGameFragmentDirections.actionStartFragmentToWelcomeFragment()
         )
     }
 
