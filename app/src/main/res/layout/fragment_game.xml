@@ -20,8 +20,6 @@
         android:layout_height="wrap_content"
         android:text="$100"
         android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/iv_game_app_bar"
         app:layout_constraintEnd_toEndOf="@+id/iv_game_app_bar"
         app:layout_constraintStart_toStartOf="@+id/iv_game_app_bar"

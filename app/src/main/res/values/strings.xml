@@ -10,6 +10,8 @@
     <string name="back">Back</string>
     <string name="choose_army">Choose army</string>
     <string name="pause">Pause</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 
     <!-- Start -->
     <string name="start_choose_your_army">Choose your army</string>
@@ -50,6 +52,14 @@
     <!-- Диалог Настройки -->
     <string name="dialog_settings_title">Settings</string>
     <string name="dialog_settings_close">Close</string>
+
+    <!-- YesNoDialog EXIT_GAME -->
+    <string name="yes_no_mode_exit_game_title">Exit the game</string>
+    <string name="yes_no_mode_exit_game_description">Are you sure you want to exit the game?</string>
+
+    <!-- YesNoDialog EXIT_GAME -->
+    <string name="yes_no_mode_start_battle_title">To battle</string>
+    <string name="yes_no_mode_start_battle_description">Are you ready to join the battle?</string>
 
     <!-- Здания -->
     <string name="headquarters">Headquarters</string> <!-- Штаб -->

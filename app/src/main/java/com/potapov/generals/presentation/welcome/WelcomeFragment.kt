@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.potapov.generals.R
 import com.potapov.generals.databinding.FragmentWelcomeBinding
+import com.potapov.generals.dialogs.YesNoDialogMode
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -35,9 +36,11 @@ class WelcomeFragment : Fragment() {
             if (it.isEmpty()) binding.btnContinueGame.visibility = View.GONE
         }
         binding.apply {
-            btnNewGame.setOnClickListener { launchStartFragment() }
+            btnNewGame.setOnClickListener { launchNewGameFragment() }
             btnContinueGame.setOnClickListener { launchGameFragment() }
-            btnExit.setOnClickListener { exitFromGame() }
+            btnExit.setOnClickListener {
+                launchYesNoDialog(YesNoDialogMode.EXIT_GAME)
+            }
         }
     }
 
@@ -46,13 +49,17 @@ class WelcomeFragment : Fragment() {
         finish()
     }
 
-    private fun launchStartFragment() {
-        findNavController().navigate(R.id.action_welcomeFragment_to_startFragment)
+    private fun launchNewGameFragment() {
+        findNavController().navigate(R.id.action_welcomeFragment_to_newGameFragment)
     }
 
     private fun launchGameFragment() {
         findNavController().navigate(R.id.action_welcomeFragment_to_gameFragment)
     }
+
+    private fun launchYesNoDialog(mode: YesNoDialogMode) = findNavController().navigate(
+        WelcomeFragmentDirections.actionWelcomeFragmentToYesNoDialog(mode)
+    )
 
     override fun onDestroyView() {
         super.onDestroyView()

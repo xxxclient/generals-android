@@ -9,15 +9,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.potapov.generals.R
-import com.potapov.generals.databinding.FragmentStartBinding
+import com.potapov.generals.databinding.FragmentNewGameBinding
 import com.potapov.generals.domain.entity.Army
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class NewGameFragment : Fragment() {
 
-    private var _binding: FragmentStartBinding? = null
-    private val binding: FragmentStartBinding
+    private var _binding: FragmentNewGameBinding? = null
+    private val binding: FragmentNewGameBinding
         get() = _binding ?: throw RuntimeException("FragmentStartBinding == null")
 
     private val viewModel: NewGameViewModel by viewModels()
@@ -27,7 +27,7 @@ class NewGameFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentStartBinding.inflate(inflater, container, false)
+        _binding = FragmentNewGameBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -61,13 +61,13 @@ class NewGameFragment : Fragment() {
 
     private fun launchGameFragment(army: Army) {
         findNavController().navigate(
-            NewGameFragmentDirections.actionStartFragmentToGameFragment(army)
+            NewGameFragmentDirections.actionNewGameFragmentToGameFragment(army)
         )
     }
 
     private fun launchWelcomeFragment() {
         findNavController().navigate(
-            NewGameFragmentDirections.actionStartFragmentToWelcomeFragment()
+            NewGameFragmentDirections.actionNewGameFragmentToWelcomeFragment()
         )
     }
 
