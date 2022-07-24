@@ -12,8 +12,6 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <!-- Убирает белый экран при старте активности -->
-        <item name="android:windowDisablePreview">true</item>
     </style>
 
     <style name="Theme.Generals.SplashScreen" parent="Theme.SplashScreen">

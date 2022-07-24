@@ -6,13 +6,13 @@ import com.potapov.generals.domain.entity.User
 class UserMapper {
 
     fun mapEntityToDbModel(user: User) = UserDbModel(
-        userId = user.userId,
-        name = user.name
+        id = user.id,
+        race = user.race
     )
 
     fun mapDbModelToEntity(userDbModel: UserDbModel) = User(
-        userId = userDbModel.userId,
-        name = userDbModel.name
+        id = userDbModel.id,
+        race = userDbModel.race
     )
 
     fun mapListDbModelToListEntity(list: List<UserDbModel>) = list.map {

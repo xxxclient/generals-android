@@ -36,25 +36,25 @@ class NewGameViewModel @Inject constructor(
         }
     }
 
-    fun addUser(inputName: String?) {
-        val name = parseName(inputName)
-        val fieldsValid = validateInput(name)
+    fun addUser(inputRace: String?) {
+        val race = parseName(inputRace)
+        val fieldsValid = validateInput(race)
         if (fieldsValid) {
             viewModelScope.launch {
-                val user = User(name = name)
+                val user = User(race = race)
                 userUseCase.addUser(user)
                 startGame()
             }
         }
     }
 
-    fun editUser(inputName: String?) {
-        val name = parseName(inputName)
-        val fieldsValid = validateInput(name)
+    fun editUser(inputRace: String?) {
+        val race = parseName(inputRace)
+        val fieldsValid = validateInput(race)
         if (fieldsValid) {
             _user.value?.let {
                 viewModelScope.launch {
-                    val user = it.copy(name = name)
+                    val user = it.copy(race = race)
                     userUseCase.editUser(user)
                     startGame()
                 }

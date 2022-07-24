@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.doOnTextChanged
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.potapov.generals.R
 import com.potapov.generals.databinding.FragmentNewGameBinding
-import com.potapov.generals.domain.entity.Army
+import com.potapov.generals.domain.entity.Race
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -35,41 +35,39 @@ class NewGameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         observeViewModel()
         binding.apply {
-            btnStartBack.setOnClickListener { launchWelcomeFragment() }
-            etStartUserName.doOnTextChanged { text, start, before, count ->
-                viewModel.resetErrorInputName()
-            }
-            btnStartGame.setOnClickListener {
-                viewModel.addUser(etStartUserName.text?.toString())
+            btnNewGameBack.setOnClickListener { launchWelcomeFragment() }
+            btnNewGameStart.setOnClickListener {
+                val userRace = when (rgNewGameUserRace.checkedRadioButtonId) {
+                    rbNewGameUserRaceNF.id -> Race.NORTHERN_FEDERATION.toString()
+                    rbNewGameUserRaceWS.id -> Race.WESTERN_STATES.toString()
+                    else -> null
+                }
+
+                viewModel.addUser(userRace)
             }
         }
     }
 
     private fun observeViewModel() {
         viewModel.errorInputName.observe(viewLifecycleOwner) {
-            val message = if (it) {
-                getString(R.string.start_error_input_name)
-            } else {
-                null
-            }
-            binding.tilStartUserName.error = message
+            val message = if (it) getString(R.string.choose_race) else null
+            showMessage(message)
         }
         viewModel.shouldStartGame.observe(viewLifecycleOwner) {
-            launchGameFragment(Army.RUSSIA)
+            launchGameFragment(Race.NORTHERN_FEDERATION)
         }
     }
 
-    private fun launchGameFragment(army: Army) {
-        findNavController().navigate(
-            NewGameFragmentDirections.actionNewGameFragmentToGameFragment(army)
-        )
-    }
+    private fun launchGameFragment(race: Race) = findNavController().navigate(
+        NewGameFragmentDirections.actionNewGameFragmentToGameFragment(race)
+    )
 
-    private fun launchWelcomeFragment() {
-        findNavController().navigate(
-            NewGameFragmentDirections.actionNewGameFragmentToWelcomeFragment()
-        )
-    }
+    private fun launchWelcomeFragment() = findNavController().navigate(
+        R.id.action_newGameFragment_to_welcomeFragment
+    )
+
+    private fun showMessage(message: String?) =
+            Toast.makeText(requireActivity(), message, Toast.LENGTH_SHORT).show()
 
     override fun onDestroyView() {
         super.onDestroyView()

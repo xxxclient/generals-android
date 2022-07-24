@@ -50,8 +50,8 @@
         android:label="GameFragment"
         tools:layout="@layout/fragment_game">
         <argument
-            android:name="army"
-            app:argType="com.potapov.generals.domain.entity.Army" />
+            android:name="race"
+            app:argType="com.potapov.generals.domain.entity.Race" />
         <action
             android:id="@+id/action_gameFragment_to_buildingFragment"
             app:destination="@id/buildingFragment"

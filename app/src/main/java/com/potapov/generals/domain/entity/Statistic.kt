@@ -17,7 +17,7 @@ data class Statistic(
     val commandCenter: CommandCenter,
     val laboratory: Laboratory,
     val oilDerrick: OilDerrick,
-    val army: Army,
+    val race: Race,
     val resources: Resources,
 ) : Parcelable {
 
@@ -30,7 +30,7 @@ data class Statistic(
             CommandCenter(0),
             Laboratory(0),
             OilDerrick(0),
-            Army.RUSSIA,
+            Race.NORTHERN_FEDERATION,
             Resources(0, 0)
         )
     }

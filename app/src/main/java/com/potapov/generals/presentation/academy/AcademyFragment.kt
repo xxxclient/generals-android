@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.potapov.generals.databinding.FragmentAcademyBinding
-import com.potapov.generals.domain.entity.Army
-import com.potapov.generals.presentation.battle.BattleFragmentDirections
+import com.potapov.generals.domain.entity.Race
 
 class AcademyFragment : Fragment() {
 
@@ -28,12 +27,12 @@ class AcademyFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            btnAcademyBack.setOnClickListener { launchGameFragment(Army.RUSSIA) }
+            btnAcademyBack.setOnClickListener { launchGameFragment(Race.NORTHERN_FEDERATION) }
         }
     }
 
-    private fun launchGameFragment(army: Army) = findNavController().navigate(
-        AcademyFragmentDirections.actionAcademyFragmentToGameFragment(army)
+    private fun launchGameFragment(race: Race) = findNavController().navigate(
+        AcademyFragmentDirections.actionAcademyFragmentToGameFragment(race)
     )
 
     override fun onDestroyView() {

@@ -1,10 +1,10 @@
-package com.potapov.generals.domain.entity.aerodrome
+package com.potapov.generals.domain.entity.airbase
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Helicopter(
+data class Fighter(
     val creationTime: Int,
     val level: Int,
     val life: Int,

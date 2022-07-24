@@ -1,4 +1,4 @@
-package com.potapov.generals.domain.entity.aerodrome
+package com.potapov.generals.domain.entity.airbase
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

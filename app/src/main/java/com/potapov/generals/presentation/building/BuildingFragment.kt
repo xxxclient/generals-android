@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.potapov.generals.databinding.FragmentBuildingBinding
-import com.potapov.generals.domain.entity.Army
 import com.potapov.generals.domain.entity.Building
+import com.potapov.generals.domain.entity.Race
 import com.potapov.generals.domain.entity.UnitType
 
 class BuildingFragment : Fragment() {
@@ -32,7 +32,7 @@ class BuildingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            btnBuildingBack.setOnClickListener { launchGameFragment(Army.RUSSIA) }
+            btnBuildingBack.setOnClickListener { launchGameFragment(Race.NORTHERN_FEDERATION) }
             tvBuildingName.text = args.building.name
 
             when (args.building) {
@@ -79,8 +79,8 @@ class BuildingFragment : Fragment() {
         BuildingFragmentDirections.actionBuildingFragmentToUnitFragment(unit)
     )
 
-    private fun launchGameFragment(army: Army) = findNavController().navigate(
-        BuildingFragmentDirections.actionBuildingFragmentToGameFragment(army)
+    private fun launchGameFragment(race: Race) = findNavController().navigate(
+        BuildingFragmentDirections.actionBuildingFragmentToGameFragment(race)
     )
 
     override fun onDestroyView() {

@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.potapov.generals.databinding.FragmentBattleBinding
-import com.potapov.generals.domain.entity.Army
+import com.potapov.generals.domain.entity.Race
 
 class BattleFragment : Fragment() {
 
@@ -31,12 +31,12 @@ class BattleFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            btnBattleBack.setOnClickListener { launchGameFragment(Army.RUSSIA) }
+            btnBattleBack.setOnClickListener { launchGameFragment(Race.NORTHERN_FEDERATION) }
         }
     }
 
-    private fun launchGameFragment(army: Army) = findNavController().navigate(
-        BattleFragmentDirections.actionBattleFragmentToGameFragment(army)
+    private fun launchGameFragment(race: Race) = findNavController().navigate(
+        BattleFragmentDirections.actionBattleFragmentToGameFragment(race)
     )
 
     override fun onDestroyView() {

@@ -6,13 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
-import com.potapov.generals.databinding.FragmentBuildingBinding
 import com.potapov.generals.databinding.FragmentLaboratoryBinding
-import com.potapov.generals.domain.entity.Army
-import com.potapov.generals.domain.entity.Building
-import com.potapov.generals.domain.entity.UnitType
-import com.potapov.generals.presentation.battle.BattleFragmentDirections
+import com.potapov.generals.domain.entity.Race
 
 class LaboratoryFragment : Fragment() {
 
@@ -32,12 +27,12 @@ class LaboratoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            btnLaboratoryBack.setOnClickListener { launchGameFragment(Army.RUSSIA) }
+            btnLaboratoryBack.setOnClickListener { launchGameFragment(Race.NORTHERN_FEDERATION) }
         }
     }
 
-    private fun launchGameFragment(army: Army) = findNavController().navigate(
-        LaboratoryFragmentDirections.actionLaboratoryFragmentToGameFragment(army)
+    private fun launchGameFragment(race: Race) = findNavController().navigate(
+        LaboratoryFragmentDirections.actionLaboratoryFragmentToGameFragment(race)
     )
 
     override fun onDestroyView() {

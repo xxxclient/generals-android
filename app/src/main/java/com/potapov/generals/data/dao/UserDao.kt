@@ -14,11 +14,11 @@ interface UserDao {
     fun getUserList(): LiveData<List<UserDbModel>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addUser(shopItemDbModel: UserDbModel)
+    suspend fun addUser(userDbModel: UserDbModel)
 
-    @Query("DELETE FROM users WHERE userId=:userId")
+    @Query("DELETE FROM users WHERE id = :userId")
     suspend fun deleteUser(userId: Int)
 
-    @Query("SELECT * FROM users WHERE userId=:userId LIMIT 1")
+    @Query("SELECT * FROM users WHERE id = :userId LIMIT 1")
     suspend fun getUser(userId: Int): UserDbModel
 }

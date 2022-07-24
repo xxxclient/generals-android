@@ -131,7 +131,7 @@
         android:id="@+id/ivBuildingBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:src="@color/cardview_dark_background"
+        android:src="@color/black_50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

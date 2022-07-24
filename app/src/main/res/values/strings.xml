@@ -15,19 +15,17 @@
     <string name="open">Open</string>
     <string name="upgrade">Upgrade</string>
 
-    <!-- Start -->
-    <string name="start_choose_your_army">Choose your army</string>
-    <string name="start_choose_your_enemy">Choose your enemy</string>
-    <string name="start_game">Start game</string>
-    <string name="start_enter_your_name">Enter your name</string>
-    <string name="start_error_input_name">Invalid name</string>
+    <!-- Messages -->
+    <string name="choose_race">Choose a race</string>
 
-    <!-- Армии -->
-    <string name="russia">Russia</string>
-    <string name="ukraine">Ukraine</string>
-    <string name="usa">USA</string>
-    <string name="china">China</string>
-    <string name="iraq">Iraq</string>
+    <!-- New game -->
+    <string name="new_game_choose_your_race">Choose your race</string>
+    <string name="new_game_choose_enemy_race">Choose an enemy race</string>
+    <string name="new_game_start">Start game</string>
+
+    <!-- Race -->
+    <string name="northern_federation">Northern Federation</string>
+    <string name="western_states">Western States</string>
 
     <!-- База -->
     <string name="resources">Resources</string>
