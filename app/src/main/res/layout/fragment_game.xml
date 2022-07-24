@@ -46,7 +46,7 @@
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/rus_building_oil_derrick"
-        app:layout_constraintBottom_toTopOf="@+id/iv_game_academy"
+        app:layout_constraintBottom_toTopOf="@+id/iv_game_laboratory"
         app:layout_constraintEnd_toStartOf="@+id/iv_game_reactor"
         app:layout_constraintStart_toEndOf="@+id/iv_game_command_center"
         app:layout_constraintTop_toBottomOf="@+id/iv_game_app_bar" />
@@ -59,7 +59,7 @@
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/rus_building_barracks"
-        app:layout_constraintBottom_toTopOf="@+id/iv_game_laboratory"
+        app:layout_constraintBottom_toTopOf="@+id/iv_game_academy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_game_oil_derrick"
         app:layout_constraintTop_toBottomOf="@+id/iv_game_app_bar" />
@@ -73,22 +73,9 @@
         android:focusable="true"
         android:src="@drawable/rus_building_barracks"
         app:layout_constraintBottom_toTopOf="@+id/iv_game_factory"
-        app:layout_constraintEnd_toStartOf="@+id/iv_game_academy"
+        app:layout_constraintEnd_toStartOf="@+id/iv_game_laboratory"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_game_command_center" />
-
-    <ImageView
-        android:id="@+id/iv_game_academy"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="?attr/selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
-        android:src="@drawable/rus_building_factory"
-        app:layout_constraintBottom_toTopOf="@+id/iv_game_airbase"
-        app:layout_constraintEnd_toStartOf="@+id/iv_game_laboratory"
-        app:layout_constraintStart_toEndOf="@+id/iv_game_barracks"
-        app:layout_constraintTop_toBottomOf="@+id/iv_game_oil_derrick" />
 
     <ImageView
         android:id="@+id/iv_game_laboratory"
@@ -97,10 +84,23 @@
         android:background="?attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
+        android:src="@drawable/rus_building_factory"
+        app:layout_constraintBottom_toTopOf="@+id/iv_game_airbase"
+        app:layout_constraintEnd_toStartOf="@+id/iv_game_academy"
+        app:layout_constraintStart_toEndOf="@+id/iv_game_barracks"
+        app:layout_constraintTop_toBottomOf="@+id/iv_game_oil_derrick" />
+
+    <ImageView
+        android:id="@+id/iv_game_academy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
         android:src="@drawable/rus_building_airbase"
         app:layout_constraintBottom_toTopOf="@+id/iv_game_shipyard"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/iv_game_academy"
+        app:layout_constraintStart_toEndOf="@+id/iv_game_laboratory"
         app:layout_constraintTop_toBottomOf="@+id/iv_game_reactor" />
 
     <ImageView
@@ -127,7 +127,7 @@
         app:layout_constraintBottom_toTopOf="@+id/ivGameBar"
         app:layout_constraintEnd_toStartOf="@+id/iv_game_shipyard"
         app:layout_constraintStart_toEndOf="@+id/iv_game_factory"
-        app:layout_constraintTop_toBottomOf="@+id/iv_game_academy" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_game_laboratory" />
 
     <ImageView
         android:id="@+id/iv_game_shipyard"
@@ -140,7 +140,7 @@
         app:layout_constraintBottom_toTopOf="@+id/ivGameBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_game_airbase"
-        app:layout_constraintTop_toBottomOf="@+id/iv_game_laboratory" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_game_academy" />
 
     <ProgressBar
         android:id="@+id/tv_game_command_center_life"
@@ -195,19 +195,6 @@
         app:layout_constraintTop_toTopOf="@+id/iv_game_barracks" />
 
     <ProgressBar
-        android:id="@+id/tv_game_academy_life"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="16dp"
-        android:paddingTop="16dp"
-        android:progress="50"
-        android:progressBackgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/iv_game_academy"
-        app:layout_constraintStart_toStartOf="@+id/iv_game_academy"
-        app:layout_constraintTop_toTopOf="@+id/iv_game_academy" />
-
-    <ProgressBar
         android:id="@+id/tv_game_laboratory_life"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
@@ -219,6 +206,19 @@
         app:layout_constraintEnd_toEndOf="@+id/iv_game_laboratory"
         app:layout_constraintStart_toStartOf="@+id/iv_game_laboratory"
         app:layout_constraintTop_toTopOf="@+id/iv_game_laboratory" />
+
+    <ProgressBar
+        android:id="@+id/tv_game_academy_life"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:progress="50"
+        android:progressBackgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_game_academy"
+        app:layout_constraintStart_toStartOf="@+id/iv_game_academy"
+        app:layout_constraintTop_toTopOf="@+id/iv_game_academy" />
 
     <ProgressBar
         android:id="@+id/tv_game_factory_life"
@@ -304,26 +304,26 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_game_barracks_life" />
 
     <TextView
-        android:id="@+id/tv_game_academy_level"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="16dp"
-        android:text="Academy"
-        android:textColor="@android:color/white"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_game_academy_life"
-        app:layout_constraintTop_toBottomOf="@+id/tv_game_academy_life" />
-
-    <TextView
         android:id="@+id/tv_game_laboratory_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="16dp"
-        android:text="Laboratory"
+        android:text="@string/laboratory"
         android:textColor="@android:color/white"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/tv_game_laboratory_life"
         app:layout_constraintTop_toBottomOf="@+id/tv_game_laboratory_life" />
+
+    <TextView
+        android:id="@+id/tv_game_academy_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:text="@string/academy"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_game_academy_life"
+        app:layout_constraintTop_toBottomOf="@+id/tv_game_academy_life" />
 
     <TextView
         android:id="@+id/tv_game_factory_level"

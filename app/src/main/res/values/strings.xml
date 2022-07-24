@@ -12,6 +12,8 @@
     <string name="pause">Pause</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="open">Open</string>
+    <string name="upgrade">Upgrade</string>
 
     <!-- Start -->
     <string name="start_choose_your_army">Choose your army</string>
@@ -68,6 +70,7 @@
     <string name="factory">Factory</string> <!-- Завод -->
     <string name="aerodrome">Aerodrome</string> <!-- Аэродром -->
     <string name="laboratory">Laboratory</string> <!-- Лаборатория -->
+    <string name="academy">Academy</string> <!-- Лаборатория -->
 
     <!-- Завод -->
     <string name="tank">Tank</string> <!-- Танк -->

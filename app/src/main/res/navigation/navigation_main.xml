@@ -67,6 +67,12 @@
         <action
             android:id="@+id/action_gameFragment_to_yesNoDialog"
             app:destination="@id/yesNoDialog" />
+        <action
+            android:id="@+id/action_gameFragment_to_academyFragment"
+            app:destination="@id/academyFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_laboratoryFragment"
+            app:destination="@id/laboratoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/battleFragment"
@@ -132,4 +138,22 @@
             android:id="@+id/action_yesNoDialog_to_battleFragment"
             app:destination="@id/battleFragment" />
     </dialog>
+    <fragment
+        android:id="@+id/academyFragment"
+        android:name="com.potapov.generals.presentation.academy.AcademyFragment"
+        android:label="AcademyFragment"
+        tools:layout="@layout/fragment_academy">
+        <action
+            android:id="@+id/action_academyFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/laboratoryFragment"
+        android:name="com.potapov.generals.presentation.laboratory.LaboratoryFragment"
+        android:label="LaboratoryFragment"
+        tools:layout="@layout/fragment_laboratory">
+        <action
+            android:id="@+id/action_laboratoryFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
 </navigation>

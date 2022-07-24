@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.potapov.generals.R
 import com.potapov.generals.databinding.FragmentGameBinding
 import com.potapov.generals.dialogs.YesNoDialogMode
 import com.potapov.generals.domain.entity.Building
@@ -37,8 +38,8 @@ class GameFragment : Fragment() {
             ivGameOilDerrick.setOnClickListener { launchBuildingFragment(Building.OIL_DERRICK) }
             ivGameReactor.setOnClickListener { launchBuildingFragment(Building.REACTOR) }
             ivGameBarracks.setOnClickListener { launchBuildingFragment(Building.BARRACKS) }
-            ivGameAcademy.setOnClickListener { launchBuildingFragment(Building.ACADEMY) }
-            ivGameLaboratory.setOnClickListener { launchBuildingFragment(Building.LABORATORY) }
+            ivGameAcademy.setOnClickListener { launchAcademyFragment() }
+            ivGameLaboratory.setOnClickListener { launchLaboratoryFragment() }
             ivGameFactory.setOnClickListener { launchBuildingFragment(Building.FACTORY) }
             ivGameAirbase.setOnClickListener { launchBuildingFragment(Building.AIRBASE) }
             ivGameShipyard.setOnClickListener { launchBuildingFragment(Building.SHIPYARD) }
@@ -51,6 +52,14 @@ class GameFragment : Fragment() {
 
     private fun launchBuildingFragment(building: Building) = findNavController().navigate(
         GameFragmentDirections.actionGameFragmentToBuildingFragment(building)
+    )
+
+    private fun launchLaboratoryFragment() = findNavController().navigate(
+        R.id.action_gameFragment_to_laboratoryFragment
+    )
+
+    private fun launchAcademyFragment() = findNavController().navigate(
+        R.id.action_gameFragment_to_academyFragment
     )
 
     private fun launchWelcomeFragment() = findNavController().navigate(
