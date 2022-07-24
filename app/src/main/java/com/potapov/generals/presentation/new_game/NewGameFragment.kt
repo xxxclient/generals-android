@@ -42,8 +42,14 @@ class NewGameFragment : Fragment() {
                     rbNewGameUserRaceWS.id -> Race.WESTERN_STATES.toString()
                     else -> null
                 }
+                val botRace = when (rgNewGameBotRace.checkedRadioButtonId) {
+                    rbNewGameBotRaceNF.id -> Race.NORTHERN_FEDERATION.toString()
+                    rbNewGameBotRaceWS.id -> Race.WESTERN_STATES.toString()
+                    else -> null
+                }
 
                 viewModel.addUser(userRace)
+                viewModel.addBot(botRace)
             }
         }
     }

@@ -4,7 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.potapov.generals.domain.entity.Bot
 import com.potapov.generals.domain.entity.User
+import com.potapov.generals.domain.usecase.BotUseCase
 import com.potapov.generals.domain.usecase.UserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -12,7 +14,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NewGameViewModel @Inject constructor(
-    private val userUseCase: UserUseCase
+    private val userUseCase: UserUseCase,
+    private val botUseCase: BotUseCase
 ) : ViewModel() {
 
     val userList = userUseCase.getUserList()
@@ -43,6 +46,19 @@ class NewGameViewModel @Inject constructor(
             viewModelScope.launch {
                 val user = User(race = race)
                 userUseCase.addUser(user)
+//                startGame()
+            }
+        }
+    }
+
+    fun addBot(inputRace: String?) {
+        val race = parseName(inputRace)
+        val fieldsValid = validateInput(race)
+        if (fieldsValid) {
+            viewModelScope.launch {
+                val bot = Bot(race = race, level = 1)
+                botUseCase.addBot(bot)
+                // TODO: Добавить или общий метод добавления юзера и бота или общую валидацию ввода
                 startGame()
             }
         }

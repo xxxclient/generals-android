@@ -27,7 +27,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Thread.sleep(2000)
+        // TODO: Включить splash screen
+//        Thread.sleep(2000)
         installSplashScreen()
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
